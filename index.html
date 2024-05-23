@@ -55,16 +55,16 @@
           />
         </div>
         <div class="contacts">
-          <div class="contact">
+          <div class="contact" v-for="(contact, index) in contacts">
             <div class="contact-logo">
-              <img src="img/avatar_1.jpg" alt="Utente" />
+              <img src="{{contacts[index].avatar}}" alt="Utente" />
             </div>
             <div class="contact-info">
               <h3>
-                <span class="contact-name">Nome contatto</span>
-                <span class="time f-right"></span>
+                <span class="contact-name">{{contacts[index].name}}</span>
+                <span class="time f-right"> 12:30</span>
               </h3>
-              <small></small>
+              <small>uultimo messaggio inviato</small>
             </div>
           </div>
         </div>
@@ -88,7 +88,12 @@
         </div>
         <div class="right-messages-container">
           <div class="right-messages">
-           
+            <div v-for="(messaggi, i) in contacts[0].messages" :class="{'sent': contacts[0].messages[i].status === 'sent'}">
+                <!--  :class="{'received': messaggi[i].status === 'received'}" -->
+                {{contacts[0].messages[i].message}} 
+              <mark>16:30</mark>
+            </div>
+      
           </div>
         </div>
         <div class="right-footer">

@@ -254,6 +254,8 @@
   padding: 5% 10%;
   background-image: url('img/mine.jpg');
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -358,6 +360,38 @@
   font-size: 25px;
   color: #6B7376;
 }
+.right-messages div {
+  
+  
+  margin: 0 13px;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 15px 40px 15px 15px;
+  position: relative;
+  background-color: white;
+  
+ }
+ 
+ .sent {
+  background-color: #d4f9bb;
+  align-self: flex-end;
+ }
+ .received {
+  
+  background-color: white;
+  
+ }
+ mark {
+  background-color: transparent;
+  font-size: 12px;
+  color: var(--mark);
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  
+  
+  
+ }
 
 
 
