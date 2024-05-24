@@ -172,6 +172,8 @@ createApp({
         ],
         
         currentChat: 0,
+        inputText: '',
+
         
         
         
@@ -180,7 +182,30 @@ createApp({
 methods: {
     setChat(index) {
         this.currentChat = index;
-    }
+    },
+    
+    responseChat() {
+        this.contacts[this.currentChat].messages.push({
+            date: 'ora',
+            message: 'ok',
+            status: 'received'
+         });
+    },
+    
+       
+    
+    addMessages(currentChat) {
+           if (this.inputText) {
+
+               this.contacts[currentChat].messages.push({
+                   date: 'ora',
+                   message: this.inputText,
+                   status: 'sent'
+                });
+                this.inputText = '';
+                setTimeout(this.responseChat, 1000);
+            }
+    },
 
 }
 }).mount('#app');
