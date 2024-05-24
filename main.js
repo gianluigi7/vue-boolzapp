@@ -1,5 +1,6 @@
 'use strict'
-
+const prova = [1, 3 , 45 , 7];
+console.log(prova[1]);
 
 const {createApp} = Vue;
 
@@ -168,12 +169,18 @@ createApp({
                     }
                 ],
             }
-        ]
+        ],
+        
+        currentChat: 0,
         
         
         
-        
-        
-       }
     }
+},
+methods: {
+    setChat(index) {
+        this.currentChat = index;
+    }
+
+}
 }).mount('#app');

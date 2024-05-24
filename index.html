@@ -55,16 +55,16 @@
           />
         </div>
         <div class="contacts">
-          <div class="contact" v-for="(contact, index) in contacts">
+          <div class="contact" v-for="(contact, index) in contacts" @click="setChat(index)">
             <div class="contact-logo">
-              <img src="{{contacts[index].avatar}}" alt="Utente" />
+              <img src="" alt="Utente" /> <!-- {{contacts[index].avatar}} -->
             </div>
             <div class="contact-info">
               <h3>
                 <span class="contact-name">{{contacts[index].name}}</span>
                 <span class="time f-right"> 12:30</span>
               </h3>
-              <small>uultimo messaggio inviato</small>
+              <small>{{contacts[index].messages.at(-1).message}}</small>
             </div>
           </div>
         </div>
@@ -88,9 +88,9 @@
         </div>
         <div class="right-messages-container">
           <div class="right-messages">
-            <div v-for="(messaggi, i) in contacts[0].messages" :class="{'sent': contacts[0].messages[i].status === 'sent'}">
+            <div v-for="(messaggi, i) in contacts[currentChat].messages" :class="{'sent': contacts[0].messages[i].status === 'sent'}">
                 <!--  :class="{'received': messaggi[i].status === 'received'}" -->
-                {{contacts[0].messages[i].message}} 
+                {{contacts[currentChat].messages[i].message}} 
               <mark>16:30</mark>
             </div>
       
