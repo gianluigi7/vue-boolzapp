@@ -369,10 +369,10 @@
   padding: 15px 40px 15px 15px;
   position: relative;
   background-color: white;
+  max-width: fit-content;
   
  }
- 
- .sent {
+ .right-messages div.sent {
   background-color: #d4f9bb;
   align-self: flex-end;
  }
