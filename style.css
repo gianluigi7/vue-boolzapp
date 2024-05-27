@@ -369,7 +369,7 @@
   padding: 15px 40px 15px 15px;
   position: relative;
   background-color: white;
-  max-width: fit-content;
+  width: fit-content;
   
  }
  .right-messages div.sent {

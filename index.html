@@ -52,10 +52,12 @@
             class="left-searchbar-input"
             placeholder="Cerca o inizia una nuova chat"
             name="search"
+            v-model="searchUserInput"
+            
           />
         </div>
         <div class="contacts">
-          <div class="contact" v-for="(contact, index) in contacts" @click="setChat(index)">
+          <div class="contact" v-for="(contact, index) in listUser(contact)" @click="setChat(index)">
             <div class="contact-logo">
               <img src="" alt="Utente" /> <!-- {{contacts[index].avatar}} -->
             </div>

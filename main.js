@@ -173,6 +173,7 @@ createApp({
         
         currentChat: 0,
         inputText: '',
+        searchUserInput: '',
 
         
         
@@ -199,13 +200,26 @@ methods: {
 
                this.contacts[currentChat].messages.push({
                    date: 'ora',
-                   message: this.inputText,
+                   message: this.inputText.trim(),
                    status: 'sent'
                 });
                 this.inputText = '';
                 setTimeout(this.responseChat, 1000);
             }
     },
+    
+    listUser() {
+        if (this.searchUserInput) {
+         return this.contacts.filter((element) => {
+            return element.name.includes(this.searchUserInput);
+         });
 
+         
+        }
+        else {
+            return this.contacts;
+        }
+    }
+  
 }
 }).mount('#app');
